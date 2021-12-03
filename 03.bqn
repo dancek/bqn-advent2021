@@ -15,7 +15,7 @@ lines ← ⟨
 lines ↩ •FLines "03.txt"
 bs ← >'0'-˜˘lines
 halflen ← 2÷˜≠bs
-bitcounts ← +´˘⍉bs
+bitcounts ← +˝bs
 gammab ← halflen < bitcounts
 epsilonb ← 1-gammab
 
@@ -31,9 +31,9 @@ _getfn ← {
   xs ← 𝕩
   While {𝕤 ⋄ 1 < ≠xs}‿{𝕤
     limit ← 2÷˜≠xs
-    bit ← limit F i⊑ +´˘⍉xs
+    bit ← limit F +´i⊑˘xs
 
-    matching ← bit = i⊑˘xs
+    matching ← bit = i⊏˘xs
     xs ↩ matching / xs
     i ↩ i+1
   }
