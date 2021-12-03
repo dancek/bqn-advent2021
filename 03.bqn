@@ -25,36 +25,21 @@ Bits_to_int ← {+´(2⋆↕≠𝕩) × ⌽𝕩}
 
 While   ← {𝕩{𝔽⍟𝔾∘𝔽_𝕣_𝔾∘𝔽⍟𝔾𝕩}𝕨@}´
 
-Get_O2 ← {
+_getfn ← {
+  F ← 𝔽
   i ← 0
   xs ← 𝕩
   While {𝕤 ⋄ 1 < ≠xs}‿{𝕤
     limit ← 2÷˜≠xs
-    bit ← limit ≤ i⊑ +´˘⍉xs
+    bit ← limit F i⊑ +´˘⍉xs
 
     matching ← bit = i⊑˘xs
-    #•Show bit
-    #•Show matching
     xs ↩ matching / xs
     i ↩ i+1
   }
   Bits_to_int ⥊ xs
 }
 
-Get_CO2 ← {
-  i ← 0
-  xs ← 𝕩
-  While {𝕤 ⋄ 1 < ≠xs}‿{𝕤
-    limit ← 2÷˜≠xs
-    bit ← limit > i⊑ +´˘⍉xs
-
-    matching ← bit = i⊑˘xs
-    #•Show bit
-    #•Show matching
-    xs ↩ matching / xs
-    i ↩ i+1
-  }
-  Bits_to_int ⥊ xs
-}
-
+Get_O2 ← ≥ _getfn
+Get_CO2 ← < _getfn
 •Show (Get_CO2 bs) × Get_O2 bs
