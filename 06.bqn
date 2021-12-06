@@ -7,9 +7,8 @@ ints ← •BQN ∾"⟨"‿in‿"⟩"
 # Now we can just shift left and add the first value to
 # indices 6 and 8 to get the next state. The total count of
 # fish is just the sum.
-counts ← +˝˘(↕9)=⌜ints
-mask ← 0‿0‿0‿0‿0‿0‿1‿0‿0
+counts ← +˝ints=⌜↕9
+mask ← 6=↕9
 Step ← (mask×⊏)+1⊸⌽
 
-•Show +´Step⍟80 counts
-•Show +´Step⍟256 counts
+•Show +´¨Step⍟80‿256 counts
