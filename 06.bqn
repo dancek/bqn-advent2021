@@ -12,3 +12,4 @@ mask ← 0‿0‿0‿0‿0‿0‿1‿0‿0
 Step ← (mask×⊏)+1⊸⌽
 
 •Show +´Step⍟80 counts
+•Show +´Step⍟256 counts
