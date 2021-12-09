@@ -1,0 +1,22 @@
+Split ← ((¬-˜⊢×·+`»⊸>)∘≠⊔⊢)
+in ← (@+10)Split"
+2199943210
+3987894921
+9856789892
+8767896789
+9899965678"
+in ↩ •FLines "09.txt"
+
+grid ← >-⟜'0'¨in
+
+# local minimums along a single axis
+LocalMinimums ← {𝕊 xs:
+  # create normal 3-windows *and* windows containing ∞ for the border
+  windows ← <˘(∞∾2↑xs)∾(3↕xs)∾(⌽∞∾2↑⌽xs)
+  # which windows have minimum value in the middle?
+  1=⊑∘⍋¨windows
+}
+⍋9‿4‿5
+minimums ← (LocalMinimums˘grid) ∧ ⍉LocalMinimums˘⍉grid
+
+•Show +´+˝minimums+minimums×grid
