@@ -32,7 +32,7 @@ Fill ← {
   a 𝕊 b: a
 }
 While {𝕤⋄⊑1∊⥊areas}‿{𝕤
-  areas ↩ Fill`⌾(⌽∘⍉) Fill`⌾⌽ Fill`⌾⍉ Fill`areas
+  areas ↩ Fill`⍉⌽areas
 }
 
 largest3 ← 3↑∨≠¨1↓⊔⥊areas
