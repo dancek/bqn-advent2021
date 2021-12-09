@@ -1,4 +1,6 @@
+While ← {𝕨{𝕊∘𝔾⍟𝔽𝕩}𝕩@}´
 Split ← ((¬-˜⊢×·+`»⊸>)∘≠⊔⊢)
+
 in ← (@+10)Split"
 2199943210
 3987894921
@@ -17,6 +19,21 @@ LocalMinimums ← {𝕊 xs:
   1=⊑∘⍋¨windows
 }
 ⍋9‿4‿5
-minimums ← (LocalMinimums˘grid) ∧ ⍉LocalMinimums˘⍉grid
+ms ← (LocalMinimums˘grid) ∧ ⍉LocalMinimums˘⍉grid
 
-•Show +´+˝minimums+minimums×grid
+•Show +´+˝ms+ms×grid
+
+area_ids ← (≢ms)⥊(⥊ms)×1+⊒⥊ms
+areas ← area_ids + 9≠grid
+Fill ← {
+  0 𝕊 b: b ;
+  1 𝕊 b: b ;
+  a 𝕊 0: 0 ;
+  a 𝕊 b: a
+}
+While {𝕤⋄⊑1∊⥊areas}‿{𝕤
+  areas ↩ Fill`⌾(⌽∘⍉) Fill`⌾⌽ Fill`⌾⍉ Fill`areas
+}
+
+largest3 ← 3↑∨≠¨1↓⊔⥊areas
+•Show ×´largest3
