@@ -65,9 +65,9 @@ ReadPackets ← {𝕊 s:
 ast ← ReadPackets data
 •Show vsum
 
-Eval ← {𝕊 v‿t‿data:
-  { t=4 ? data ;
-    (t ⊑ +‿×‿⌊‿⌈‿@‿>‿<‿=)´Eval¨data
-  }
+Eval ← {
+  𝕊 v‿4‿data: data ;
+  𝕊 v‿t‿data: (t ⊑ +‿×‿⌊‿⌈‿@‿>‿<‿=)´Eval¨data
 }
 •Show Eval ⊑ast
+
