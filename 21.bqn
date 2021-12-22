@@ -15,3 +15,33 @@ Step ← {𝕊:
 
 While {𝕤 ⋄ 1000>p⌈q}‿{𝕤 ⋄ Step @}
 •Show rolls×p⌊q
+
+# star 2: completely different :D
+state1 ← 1⌾⊑10‿31⥊0
+win ← (10‿21⥊0)∾˘10‿10⥊1
+MultiverseRoll ← {(¯1⌽𝕩)+(¯2⌽𝕩)+(¯3⌽𝕩)}
+MultiverseStep ← {𝕊 st‿w:
+  st ↩ >{»⍟(𝕩+1) 𝕩⊏MultiverseRoll⍟3 st}¨↕10
+  w ∾↩ +´⥊win×st
+  (st×¬win)‿w
+}
+TurnsToWin ← {1⊑MultiverseStep⍟11 ((1-𝕩)⌽state1)‿⟨⟩}
+
+CountWins ← {𝕊 as‿bs:
+  a←b←i←0
+  p←1
+  While {𝕤 ⋄ i<11}‿{𝕤
+    a +↩ p × i⊑as
+    p ↩ (p×27)-i⊑bs
+    i +↩ 1
+  }
+  p↩1
+  i↩0
+  While {𝕤 ⋄ i<11}‿{𝕤
+    p ↩ (27×p) - i⊑as
+    b +↩ p × i⊑bs
+    i +↩ 1
+  }
+  a‿b
+}
+•Show ⌈´CountWins (TurnsToWin 1)‿(TurnsToWin 3)
